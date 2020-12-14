@@ -1,13 +1,21 @@
 {
-  "name": "step-25-interactivity",
+  "name": "nuffshell-blog-11-example",
   "version": "1.0.0",
-  "description": "Writing a log statement when a mind map node is clicked",
+  "description": "Code example from the Nuffshell Coding Diary on DEV.to",
+  "author": {
+    "name": "Patrick Hund"
+  },
+  "license": "MIT",
   "keywords": [
     "mind map",
     "react",
     "typescript",
     "three.js"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nuffshell/nuffshell-blog-11-example"
+  },
   "main": "src/index.js",
   "dependencies": {
     "@apollo/client": "3.3.4",

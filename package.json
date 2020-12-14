@@ -1,0 +1,45 @@
+{
+  "name": "step-25-interactivity",
+  "version": "1.0.0",
+  "description": "Writing a log statement when a mind map node is clicked",
+  "keywords": [
+    "mind map",
+    "react",
+    "typescript",
+    "three.js"
+  ],
+  "main": "src/index.js",
+  "dependencies": {
+    "@apollo/client": "3.3.4",
+    "@types/classnames": "2.2.11",
+    "@types/lodash-es": "4.17.3",
+    "@types/react": "17.0.0",
+    "@types/react-dom": "17.0.0",
+    "@types/three": "0.103.2",
+    "classnames": "2.2.6",
+    "graphql": "15.4.0",
+    "lodash-es": "4.17.15",
+    "react": "17.0.0",
+    "react-dom": "17.0.0",
+    "react-scripts": "3.4.3",
+    "three": "0.123.0",
+    "three-forcegraph": "1.37.0",
+    "three-trackballcontrols-ts": "0.2.2",
+    "three.interactive": "1.1.0"
+  },
+  "devDependencies": {
+    "typescript": "3.8.3"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}

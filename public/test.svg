@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200">
+  <style type="text/css">
+    <![CDATA[
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      *:before,
+      *:after {
+        box-sizing: inherit;
+      }
+
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+
+      foreignObject {
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+
+      .mind-map-node {
+        padding: 10px;
+        width: 120px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-width: 3px;
+        border-style: solid;
+        border-radius: 12px;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      .magenta {
+        color: #f103c8;
+        border-color: #f103c8;
+        background-color: #fbafee;
+      }
+
+      .violet {
+        color: #8603f1;
+        border-color: #8603f1;
+        background-color: #d7a6fe;
+      }
+
+      .blue {
+        color: #0064d2;
+        border-color: #0064d2;
+        background-color: #b0d5fe;
+      }
+
+      .turquoise {
+        color: #03d3cf;
+        border-color: #03d3cf;
+        background-color: #befefd;
+      }
+    ]]>
+  </style>
+  <foreignObject width="120" height="60">
+    <div class="mind-map-node magenta"><div>Interests</div></div>
+  </foreignObject>
+</svg> 

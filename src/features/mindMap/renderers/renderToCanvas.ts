@@ -1,7 +1,7 @@
-import { ReactElement } from 'react';
-import { renderToStaticMarkup } from 'react-dom/server';
-import { createCanvas, loadImage, getContextFromCanvas } from './utils';
-import Dimensions from './Dimensions';
+import { ReactElement } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import { createCanvas, loadImage, getContextFromCanvas } from "./utils";
+import { Dimensions } from "../types";
 
 export default async function renderToCanvas(
   content: ReactElement,
@@ -12,7 +12,7 @@ export default async function renderToCanvas(
   const url = `data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}">
     <style type="text/css">
       <![CDATA[
-        ${document.getElementById('styles')?.innerHTML || ''}
+        ${document.getElementById("styles")?.innerHTML || ""}
       ]]>
     </style>
     <foreignObject width="${width}" height="${height}">

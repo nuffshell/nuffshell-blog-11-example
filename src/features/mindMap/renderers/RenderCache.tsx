@@ -17,10 +17,10 @@ export default class RenderCache {
     PreRendered
   > = new Map();
 
-  private interationManager: typeof InteractionManager;
+  private interactionManager: typeof InteractionManager;
 
   constructor({ interactionManager }: Constructor) {
-    this.interationManager = interactionManager;
+    this.interactionManager = interactionManager;
   }
 
   preRender(data: MindMapData) {
@@ -40,7 +40,7 @@ export default class RenderCache {
           event.stopPropagation();
           return console.log(`Mind map node clicked: #${id} “${name}”`);
         });
-        this.interationManager.add(sprite);
+        this.interactionManager.add(sprite);
         const linkMaterial = new THREE.MeshBasicMaterial({
           color: colorsByLevel[val]
         });

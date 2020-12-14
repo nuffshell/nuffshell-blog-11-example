@@ -1,9 +1,9 @@
-import * as THREE from 'three';
-import { TrackballControls } from 'three-trackballcontrols-ts';
-import createCanvas from './createCanvas';
-import { throttle } from 'lodash-es';
-import setCanvasDimensions from './setCanvasDimensions';
-import { InteractionManager } from 'three.interactive';
+import * as THREE from "three";
+import { TrackballControls } from "../../../../lib/threeTrackballControls";
+import createCanvas from "./createCanvas";
+import { throttle } from "lodash-es";
+import setCanvasDimensions from "./setCanvasDimensions";
+import { InteractionManager } from "three.interactive";
 
 const resizeUpdateInterval = 500;
 
@@ -26,7 +26,7 @@ export default function initializeScene(div: HTMLDivElement) {
   const controls = new TrackballControls(camera, renderer.domElement);
 
   window.addEventListener(
-    'resize',
+    "resize",
     throttle(
       () => {
         const width = window.innerWidth;

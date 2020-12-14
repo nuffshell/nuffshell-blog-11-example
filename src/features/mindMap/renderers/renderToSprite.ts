@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import * as THREE from 'three';
 import renderToCanvas from './renderToCanvas';
-import Dimensions from './Dimensions';
+import {Dimensions }from '../types';
 
 export default async function renderToSprite(
   content: ReactElement,

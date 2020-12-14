@@ -8,6 +8,16 @@ declare module '*.css' {
   export = classNames;
 }
 
-declare module 'three.interactive' {
-  export const InteractionManager: any;
+declare module "three.interactive" {
+  export class InteractionManager {
+    constructor(
+      renderer: THREE.Renderer,
+      camera: THREE.Camera,
+      canvas: HTMLCanvasElement
+    );
+
+    update(): void;
+
+    add(object: THREE.Sprite): void;
+  }
 }

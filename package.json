@@ -11,10 +11,6 @@
   "main": "src/index.js",
   "dependencies": {
     "@apollo/client": "3.3.4",
-    "@types/classnames": "2.2.11",
-    "@types/lodash-es": "4.17.3",
-    "@types/react": "17.0.0",
-    "@types/react-dom": "17.0.0",
     "classnames": "2.2.6",
     "graphql": "15.4.0",
     "lodash-es": "4.17.15",
@@ -26,7 +22,10 @@
     "three.interactive": "1.1.0"
   },
   "devDependencies": {
-    "@types/three": "^0.103.2",
+    "@types/classnames": "2.2.11",
+    "@types/lodash-es": "4.17.3",
+    "@types/react": "17.0.0",
+    "@types/react-dom": "17.0.0",
     "typescript": "3.8.3"
   },
   "scripts": {

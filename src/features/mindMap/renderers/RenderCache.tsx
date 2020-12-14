@@ -8,7 +8,7 @@ import { colorsByLevel } from '../config';
 import { InteractionManager } from 'three.interactive';
 
 interface Constructor {
-  interactionManager: typeof InteractionManager;
+  interactionManager: InteractionManager;
 }
 
 export default class RenderCache {
@@ -17,7 +17,7 @@ export default class RenderCache {
     PreRendered
   > = new Map();
 
-  private interactionManager: typeof InteractionManager;
+  private interactionManager: InteractionManager;
 
   constructor({ interactionManager }: Constructor) {
     this.interactionManager = interactionManager;

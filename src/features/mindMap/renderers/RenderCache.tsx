@@ -1,49 +1,34 @@
-import React from 'react';
-import * as THREE from 'three';
-import { NodeObject, LinkObject, PreRendered } from '../types';
-import { MindMapData } from '../../../data';
-import { MindMapNode } from '../components';
-import renderToSprite from './renderToSprite';
-import { colorsByLevel } from '../config';
-import { InteractionManager } from 'three.interactive';
+import React from "react";
+import * as THREE from "three";
+import { LinkObject, NodeObject, PreRendered } from "../types";
+import { MindMapData } from "../../../data";
+import MindMapNodeData from "../../../data/MindMapNodeData";
 
 interface Constructor {
-  interactionManager: InteractionManager;
+  renderMindMapNode: ({ name, val, id }: MindMapNodeData) => Promise<THREE.Object3D>;
+  createLinkMaterial: (val: number) => THREE.Material;
 }
 
 export default class RenderCache {
-  private preRendered: Map<
+  private readonly preRendered: Map<
     string | number | NodeObject | undefined,
     PreRendered
   > = new Map();
 
-  private interactionManager: InteractionManager;
+  private readonly renderMindMapNode;
 
-  constructor({ interactionManager }: Constructor) {
-    this.interactionManager = interactionManager;
+  private readonly createLinkMaterial;
+
+  constructor({ renderMindMapNode, createLinkMaterial }: Constructor) {
+    this.renderMindMapNode = renderMindMapNode;
+    this.createLinkMaterial = createLinkMaterial;
   }
 
   preRender(data: MindMapData) {
     return Promise.all(
       data.nodes.map(async ({ name, val, id }) => {
-        const sprite = await renderToSprite(
-          <MindMapNode label={name} level={val} />,
-          {
-            width: 128,
-            height: 64
-          }
-        );
-        sprite.renderOrder = 999;
-        sprite.onBeforeRender = (renderer: THREE.WebGLRenderer) =>
-          renderer.clearDepth();
-        sprite.addEventListener('click', (event) => {
-          event.stopPropagation();
-          return console.log(`Mind map node clicked: #${id} “${name}”`);
-        });
-        this.interactionManager.add(sprite);
-        const linkMaterial = new THREE.MeshBasicMaterial({
-          color: colorsByLevel[val]
-        });
+        const sprite = await this.renderMindMapNode({ name, val, id });
+        const linkMaterial = this.createLinkMaterial(val);
         this.preRendered.set(id, { sprite, linkMaterial });
       })
     );

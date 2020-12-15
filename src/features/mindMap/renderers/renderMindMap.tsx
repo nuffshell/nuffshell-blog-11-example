@@ -1,6 +1,8 @@
-import { MindMapData } from '../../../data';
-import RenderCache from './RenderCache';
-import { animate, initializeGraph, initializeScene } from './utils';
+import { MindMapData } from "../../../data";
+import RenderCache from "./RenderCache";
+import { animate, initializeGraph, initializeScene } from "./utils";
+import createMindMapNodeRenderer from "./createMindMapNodeRenderer";
+import createLinkMaterial from "./createLinkMaterial";
 
 export default async function renderMindMap(
   div: HTMLDivElement,
@@ -11,9 +13,12 @@ export default async function renderMindMap(
     renderer,
     camera,
     controls,
-    interactionManager
+    interactionManager,
   } = initializeScene(div);
-  const renderCache = new RenderCache({ interactionManager });
+  const renderCache = new RenderCache({
+    renderMindMapNode: createMindMapNodeRenderer({ interactionManager }),
+    createLinkMaterial
+  });
   await renderCache.preRender(data);
   const graph = initializeGraph(renderCache, data);
   scene.add(graph);

@@ -7,7 +7,7 @@ export default function PauseButton() {
 
   return (
     <button className={styles.PauseButton} onClick={togglePause}>
-      {isPaused ? 'unpause' : 'pause'}
+      {isPaused ? 'resume' : 'pause'}
     </button>
   );
 }

@@ -5,6 +5,7 @@
   width: 80px;
   height: 30px;
   border-radius: 15px;
+  border: 1px solid black;
 }
 
 .PauseButton:focus {
